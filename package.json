@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/joaocarlosJC15/clean-ts-api-Node#readme",
   "devDependencies": {
-    "git-commit-msg-linter": "^2.4.2"
+    "@types/node": "^14.0.1",
+    "git-commit-msg-linter": "^2.4.2",
+    "typescript": "^3.9.2"
   }
 }
