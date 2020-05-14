@@ -1,0 +1,19 @@
+{
+  "name": "clean-ts-api-node",
+  "version": "1.0.0",
+  "description": "clean ts api node",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joaocarlosJC15/clean-ts-api-Node.git"
+  },
+  "author": "João Carlos ALvim da Cunha",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joaocarlosJC15/clean-ts-api-Node/issues"
+  },
+  "homepage": "https://github.com/joaocarlosJC15/clean-ts-api-Node#readme"
+}
