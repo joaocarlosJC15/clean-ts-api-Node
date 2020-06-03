@@ -14,6 +14,6 @@ export class LogControllerDecorator implements Controller {
 
     }
 
-    return null
+    return httpResponse
   }
 }
