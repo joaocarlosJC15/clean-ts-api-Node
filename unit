@@ -1,0 +1,4 @@
+
+> clean-ts-api-node@1.0.0 test /home/joaocarlosJC15/Joao/Node/clean-ts-api-Node
+> jest --passWithNoTests --silent --noStackTrace --runInBand
+
