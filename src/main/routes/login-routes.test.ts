@@ -32,6 +32,23 @@ describe('Login Routes', () => {
         })
         .expect(200)
     })
+
+    test('Should return 403 if email past is being used', async () => {
+      await accountCollection.insertOne({
+        name: 'João',
+        email: 'email@mail.com',
+        password: 'any_password'
+      })
+      await request(app)
+        .post('/api/signup')
+        .send({
+          name: 'any_name',
+          email: 'email@mail.com',
+          password: 'any_password',
+          passwordConfirmation: 'any_password'
+        })
+        .expect(403)
+    })
   })
 
   describe('POST /login', () => {
