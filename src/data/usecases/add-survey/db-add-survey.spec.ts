@@ -1,6 +1,11 @@
 import { DbAddSurvey } from './db-add-survey'
 import { AddSurveyRepository, AddSurveyModel } from './db-add-survey-protocols'
 
+interface SutTypes {
+  sut: DbAddSurvey
+  addSurveyRepositoryStub: AddSurveyRepository
+}
+
 const makeFakeSurveyData = (): AddSurveyModel => (
   {
     question: 'any_question',
@@ -21,15 +26,24 @@ const makeAddSurveyRepository = (): AddSurveyRepository => {
   return new AddSurveyRepositoryStub()
 }
 
+const makeSut = (): SutTypes => {
+  const addSurveyRepositoryStub = makeAddSurveyRepository()
+  const sut = new DbAddSurvey(addSurveyRepositoryStub)
+
+  return {
+    sut,
+    addSurveyRepositoryStub
+  }
+}
+
 describe('DbAddSurvey Usecase', () => {
   test('Should call AddSurveyRepository with correct values', async () => {
-    const addSurveyRepositoryStub = makeAddSurveyRepository()
+    const { sut, addSurveyRepositoryStub } = makeSut()
 
     const addSpy = jest.spyOn(addSurveyRepositoryStub, 'add')
 
-    const sut = new DbAddSurvey(addSurveyRepositoryStub)
-
     const surveyData = makeFakeSurveyData()
+
     await sut.add(surveyData)
 
     expect(addSpy).toHaveBeenCalledWith(surveyData)
