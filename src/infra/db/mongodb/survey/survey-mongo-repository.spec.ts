@@ -1,3 +1,4 @@
+
 import { MongoHelper } from '../helpers/mongo-helper'
 import { SurveyMongoRepository } from './survey-mongo-repository'
 import { Collection } from 'mongodb'
@@ -22,22 +23,19 @@ describe('Survey Mongo Repository', () => {
     return new SurveyMongoRepository()
   }
 
-  test('Should add a survey on sucess', async () => {
+  test('Should add a survey on success', async () => {
     const sut = makeSut()
-
     await sut.add({
       question: 'any_question',
       answers: [{
         image: 'any_image',
         answer: 'any_answer'
-      },
-      {
-        answer: 'any_answer1'
-      }]
+      }, {
+        answer: 'other_answer'
+      }],
+      date: new Date()
     })
-
     const survey = await surveyCollection.findOne({ question: 'any_question' })
-
     expect(survey).toBeTruthy()
   })
 })
