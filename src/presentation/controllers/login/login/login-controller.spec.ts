@@ -5,7 +5,7 @@ import { MissingParamError } from '@/presentation/errors'
 import { Validation } from '../signup/signup-controller-protocols'
 import { AuthenticationModel } from '@/domain/usecases/authentication'
 
-interface SutTypes {
+type SutTypes = {
   sut: LoginController
   authenticationStub: Authentication
   validationStub: Validation
