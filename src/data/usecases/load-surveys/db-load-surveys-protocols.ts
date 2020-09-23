@@ -1,4 +1,3 @@
-export { Decrypter } from '@/data/protocols/criptography/decrypter'
-export { AccountModel } from '@/domain/models/account'
-export { LoadAccountByTokenRepository } from '@/data/protocols/db/account/load-account-by-token-repository'
-export { LoadAccountByToken } from '@/domain/usecases/load-account-by-token'
+export { LoadSurveys } from '@/domain/usecases/load-surveys'
+export { SurveyModel } from '@/domain/models/survey'
+export { LoadSurveysRepository } from '@/data/protocols/db/survey/load-surveys-repository'
