@@ -76,9 +76,9 @@ describe('Survey Mongo Repository', () => {
     })
 
     test('Should update survey result if its not new', async () => {
-      const survey = await makeSurvey()
+      const survey = MongoHelper.map(await makeSurvey())
 
-      const account = await makeAccount()
+      const account = MongoHelper.map(await makeAccount())
 
       const res = await surveyResultCollection.insertOne({
         surveyId: survey.id,
