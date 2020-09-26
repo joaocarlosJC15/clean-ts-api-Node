@@ -5,6 +5,12 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "name": "Attach",
+      "port": 9222,
+      "request": "attach",
+      "type": "node"
+    },
+    {
       "type": "node",
       "request": "attach",
       "name": "Dcoker: Attach to Node",
