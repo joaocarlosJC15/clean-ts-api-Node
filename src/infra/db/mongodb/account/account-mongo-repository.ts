@@ -27,7 +27,7 @@ export class AccountMongoRepository implements AddAccountRepository, LoadAccount
       _id: id
     }, {
       $set: {
-        acessToken: token
+        accessToken: token
       }
     })
   }
