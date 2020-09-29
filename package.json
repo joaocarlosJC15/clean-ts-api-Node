@@ -1,6 +1,6 @@
 {
   "name": "clean-ts-api-node",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "clean ts api node",
   "main": "index.js",
   "scripts": {
