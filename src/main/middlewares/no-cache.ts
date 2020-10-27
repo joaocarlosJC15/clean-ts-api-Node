@@ -1,0 +1,9 @@
+import { Request, Response, NextFunction } from 'express'
+
+export const noCache = (request: Request, response: Response, next: NextFunction): void => {
+  response.set('cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate')
+  response.set('Pragma', 'no-cache')
+  response.set('Expires', '0')
+  response.set('Surrogate-Control', 'no-store')
+  next()
+}
